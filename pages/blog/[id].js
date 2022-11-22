@@ -1,4 +1,6 @@
 import { client } from "../../api/client";
+import Header from "../../components/Header"
+import styles from '../../styles/blog.module.css'
 
 export const getStaticProps = async(context) => {
     const id = context.params.id;
@@ -21,10 +23,12 @@ export const getStaticPaths = async() => {
 
 export default function BlogId({ blog }) {
     return (
-        <main>
+        <Header>
+        <main className={styles.blog}>
             <h1>{blog.title}</h1>
             <p>{blog.publishedAt}</p>
             <div dangerouslySetInnerHTML = {{ __html: `${blog.body}` }}></div>
         </main>
+        </Header>
     )
 }
