@@ -12,9 +12,16 @@
 }
 
 .blogtitle {
-    width:50%;
-    margin:1.5rem auto;
-    padding:4rem;
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius:2rem;
+    width:80%;
+    margin:2rem auto;
+    padding:3rem;
+    border-top: 1px dashed rgba(255, 255, 255, 1);
+    border-bottom: 1px dashed rgba(255, 255, 255, 1);
+}
+
+.canvas {
+    background-color: #1f1144;
+    display: block;
+    height:700px;
+    width: 100%;
 }
