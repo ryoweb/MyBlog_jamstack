@@ -10,7 +10,7 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 
 
-export const getStaticProps = async() => {
+export const getStaticProps = async () => {
 
   const data = await client.get({ endpoint: 'blog' });
   return {
@@ -24,7 +24,6 @@ export default function Home({ blog }) {
   return (
     <div>
       <Header />
-      <div className={styles.topcontainer}></div>
       <ul className={styles.main}>
         {blog.map((blog) => (
           <li key={blog.id}>
@@ -35,13 +34,13 @@ export default function Home({ blog }) {
             </Link>
           </li>
         ))}
-      </ul>
-      <Canvas className={styles.canvas}>
-          <OrbitControls enableZoom={false}/>
+        <Canvas className={styles.canvas}>
+          <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.5} />
           <directionalLight position={[-2, 5, 2]} intensity={1} />
           <Sphere />
-      </Canvas>
+        </Canvas>
+      </ul>
     </div>
   );
 }
